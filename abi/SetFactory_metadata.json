@@ -1,0 +1,719 @@
+{
+	"compiler": {
+		"version": "0.8.1+commit.df193b15"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_proxyRegistryAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_silverCraftAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_goldCraftAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_mithrilCraftAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_silverIngotAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_goldIngotAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_mithrilIngotAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "baseURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_optionId",
+						"type": "uint256"
+					}
+				],
+				"name": "canMint",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "goldCraftAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "goldIngotAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_optionId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_toAddress",
+						"type": "address"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mithrilCraftAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mithrilIngotAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numOptions",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proxyRegistryAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "silverCraftAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "silverIngotAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "supportsFactoryInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_optionId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"canMint(uint256)": {
+					"details": "Returns whether the option ID can be minted. Can return false if the developer wishes to restrict a total supply per option ID (or overall)."
+				},
+				"mint(uint256,address)": {
+					"details": "Mints asset(s) in accordance to a specific address with a particular \"option\". This should be callable only by the contract owner or the owner's Wyvern Proxy (later universal login will solve this). Options should also be delineated 0 - (numOptions() - 1) for convenient indexing.",
+					"params": {
+						"_optionId": "the option id",
+						"_toAddress": "address of the future owner of the asset(s)"
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"tokenURI(uint256)": {
+					"details": "Returns a URL specifying some metadata about the option. This metadata can be of the same structure as the ERC721 metadata."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"isApprovedForAll(address,address)": {
+					"notice": "Hack to get things to work automatically on OpenSea. Use isApprovedForAll so the frontend doesn't have to worry about different method names."
+				},
+				"name()": {
+					"notice": "Returns the name of this factory."
+				},
+				"numOptions()": {
+					"notice": "Number of options the factory supports."
+				},
+				"ownerOf(uint256)": {
+					"notice": "Hack to get things to work automatically on OpenSea. Use isApprovedForAll so the frontend doesn't have to worry about different method names."
+				},
+				"supportsFactoryInterface()": {
+					"notice": "Indicates that this is a factory contract. Ideally would use EIP 165 supportsInterface()"
+				},
+				"symbol()": {
+					"notice": "Returns the symbol for this factory."
+				},
+				"transferFrom(address,address,uint256)": {
+					"notice": "Hack to get things to work automatically on OpenSea. Use transferFrom so the frontend doesn't have to worry about different method names."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/SetFactory.sol": "SetFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ERC721Tradable.sol": {
+			"keccak256": "0xecac21296a8602abd5e946ff071c12a4ccfcfde9b473802fc259545dc32ec871",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8e1d90782ccc90aeb9787de5ef198422e207a69d19d4b665efc8744b579c5c0c",
+				"dweb:/ipfs/QmZ8kTkSSk1JPoBX5SYfqvVygu6gq5FzFWRWRfbi3edrj4"
+			]
+		},
+		"contracts/GoldCraftingSet.sol": {
+			"keccak256": "0x63ba72394ae4612119ac48044cd0e4bbc4d9964456529981c9cb63f2097368fb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9593124ece9e7e807c38b383d0f1d2709eba8e872c87706111133511be17089e",
+				"dweb:/ipfs/QmNtVghx74RH2iLTjm7FbETRRZWgHCTem4wrQ2aXJvPGpB"
+			]
+		},
+		"contracts/GoldIngot.sol": {
+			"keccak256": "0x1c040077124416d6891fb042393966f728675b001e94f15f462f96a36b834d1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2cf3c9280f306efd3cd0a0df6109ee8d1093a49a458f086bed1b95427f7c8d0c",
+				"dweb:/ipfs/QmVd5mSMpydECL7NjW8BhNvXqsj56md3V8jX38ujswRf9R"
+			]
+		},
+		"contracts/IFactoryERC721.sol": {
+			"keccak256": "0x2ea4cc5c73c77d2d2319f7c04ebd42b50c8a52457e81b20b0f5be9c5aae63ea0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://de8631be9163bccbd5c80a6ce77c1bc57660d434c813d7a5eab7b939afe0506b",
+				"dweb:/ipfs/QmVr1amUYc47Z7rsYuLTgdbxBK55PGSeaK2AMLKneXxVaq"
+			]
+		},
+		"contracts/MithrilCraftingSet.sol": {
+			"keccak256": "0x03644f633b157070d9e55cffdf4321a1783bc5a8c61552f63c6a6df38c97de97",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://acc6d77e9193a142c139222f19074d07f81085958cfc30eeb0f09dc284dab99f",
+				"dweb:/ipfs/QmQLK76rUW2P18RHxb3SkdoALaDGtgTp37jMTNaWK7Lt13"
+			]
+		},
+		"contracts/MithrilIngot.sol": {
+			"keccak256": "0xe2f1fd7ce89af8cf500f3676a7c32bab8d8f948a75d1d8cb15b92bb8b9b92c0e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a351bdd6687399d55c87e5516f6d2298610e06be7cb94f1cf3838b8af76576a7",
+				"dweb:/ipfs/QmcM5v3npSd6xmB919gRQ7hM3zWg9z2dczoi8ziJMGkFyG"
+			]
+		},
+		"contracts/SetFactory.sol": {
+			"keccak256": "0xdce8ccc28ffc167b7e046f0d1f40231bb40bedaff7b396428c406bee66343057",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://54052f137e908cfe571e046bbc71c94f6de6bc1ea10ed215fbe9752aca927808",
+				"dweb:/ipfs/QmTGrsNAHsQd6H63iBWkkhhWef29GNGnGrdsLiQKoq9GoZ"
+			]
+		},
+		"contracts/SilverCraftingSet.sol": {
+			"keccak256": "0xea03bc29b0abf4c95833cd6a1bbd74f2f09d92e8ef4086cc13c27ff035f16c07",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2e581780876b4db316432b20b24573a3cd42bdd85135990b5106b059ff307617",
+				"dweb:/ipfs/QmXYTmRtgkgYNBtAAGcdcoW1kKqqEYeEnRuHYqTMV9VLhG"
+			]
+		},
+		"contracts/SilverIngot.sol": {
+			"keccak256": "0x46f181dc67575ab32883529f91ae90f9eea0dc4e890a5b852b9b0e033454d6dc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://355ca00479c35d84094e8e968ff539610fce9de57cebe1f77b673d45af11735e",
+				"dweb:/ipfs/QmW12MZL2XXqbYQkXoKQ8px4iFmgnozDameuHw5g9r2Nf2"
+			]
+		},
+		"contracts/common/meta-transactions/ContentMixin.sol": {
+			"keccak256": "0x92409bc8d2c1be83e14de02f07d791230699dee7abb70f3b7eff2425b8cc929c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1dd37a1a5b74c26cbe341ae45e688afad30e86d4edfc20d296c59390f22d67b5",
+				"dweb:/ipfs/QmWkQotAas3H2Z7e5Y4bL33Paa5t4fwcNMLLM67EowZQtZ"
+			]
+		},
+		"contracts/common/meta-transactions/EIP712Base.sol": {
+			"keccak256": "0x40e64dca9e20cd12e88efe58a2bc2f41051325dd4896b5454bad6cfe53a969ac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9979a678076f6937bcf732d916b0282e5e2d3cb7b1a3322a012a63f6f69aad99",
+				"dweb:/ipfs/QmchJfxLDHWtBgb2YfMBWgniCiHivat96kDi3qQikvJEMQ"
+			]
+		},
+		"contracts/common/meta-transactions/Initializable.sol": {
+			"keccak256": "0x397d4aa8cc6e019c7ed4e32e92db0935d6fdede224d5c6ae09136309eef15cde",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://13460611492b8292c442cfdb24c27fa255a1a3acbf98430f3b2eb61a92c46c9f",
+				"dweb:/ipfs/QmVK8kB1jkfgAM2fYXeRywBo5SV8uSpttQ3nLNMrdygmxn"
+			]
+		},
+		"contracts/common/meta-transactions/NativeMetaTransaction.sol": {
+			"keccak256": "0x013a2220d63a08ec57abaef2d074875e85990cb988173b2b74802fea9ce58471",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b5c383ab42393201eaffa7907b1d148b096dd5749e8eb15adcae9837b23b9cb5",
+				"dweb:/ipfs/QmaVwwaZCNhNDsJepi5agzf4wAN1bn8sbFA4LfKnzJqGH8"
+			]
+		},
+		"openzeppelin-solidity/contracts/access/AccessControl.sol": {
+			"keccak256": "0x98fac37221212c8f126f198d262a4df86394bd1a9969f61e40739fe8ac013dd8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://62f98a3c51ff54e1d19c8845da55415c85b4f28c81c0c3b1361eb6eaa905a0c6",
+				"dweb:/ipfs/QmTZxiScs2HXZRtscWGjBBXmG4qeFGk1Bq8FGzhbWi1wr3"
+			]
+		},
+		"openzeppelin-solidity/contracts/access/Ownable.sol": {
+			"keccak256": "0x1cae4f85f114ff17b90414f5da67365b1d00337abb5bce9bf944eb78a2c0673c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d5ff16b336ce8f906478d5f2eecc6435e00833bdc0b92f6b209cf9e92cb5b2b7",
+				"dweb:/ipfs/QmRD1rAZEqQ73C33cdA3QoUyBDMEWnNKNMc6PNkAZWHeQQ"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0xfeccdcbf67b2006a715e5af1a4c7556004d95b2806552b5cc54e46e8eb7e887b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://45b1f9043c0fb450272f20ed19ef633fcba1b129d602651a856dfae1a2243a2c",
+				"dweb:/ipfs/QmUTSQiDikkcNtTtyDpkEwCM5ztVUUh9c1inBukn6HC5Vr"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xf8e8d118a7a8b2e134181f7da655f6266aa3a0f9134b2605747139fcb0c5d835",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9ec48567e7ad06acb670980d5cdf3fd7f3949bf12894f02d68c3bb43e75aa84f",
+				"dweb:/ipfs/QmaG3R2J9cz92YT77vFjYrjMNU2wHp4ypwYD62HqDUqS5U"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x83fe24f5c04a56091e50f4a345ff504c8bff658a76d4c43b16878c8f940c53b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d4c3df1a7ca104b633a7d81c6c6f5192367d150cd5a32cba81f7f27012729013",
+				"dweb:/ipfs/QmSim72e3ZVsfgZt8UceCvbiSuMRHR6WDsiamqNzZahGSY"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC721/ERC721.sol": {
+			"keccak256": "0x2d9f9af8b84d252e0e7ee716e4cb3ad1b58f3ec6619e4f54f40d4b5e28f75eb7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://43d6abdcb4cd5be9933f526b53f21008e9a7ab75ce134478625cc8ccd3c1a638",
+				"dweb:/ipfs/QmZrzWUYmNANRCvHaMGsJQXYnWCe6HvMmvrqaPn1GEcpJ1"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0xc1c941ad1e580b4623007305921efe2f26fc7320a4edc226234dd707c658a428",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://473e11d739868e0d9f48254ccf84ba63290d6a2321d59a37b74c244a27f9cad7",
+				"dweb:/ipfs/QmUGzDmecP936jzgM7SYyGwR1YgBGsveoHHJTbDfB8jbGF"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456",
+				"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
+			"keccak256": "0x3dce5847e70c056ef0f7cf91cb9a0067cf90784794017a45c1211cde7ed1c08c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba34b5028b6a297467a7364d9af182649dee0611a0f9620ec27ce10647885cad",
+				"dweb:/ipfs/QmWhGtHDcAYWA31f3Ze9izeh3SPMRzcFagTUwxExLg3sRc"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
+			"keccak256": "0xccb7e6475afcb1c5cb13b3fbf1329c10b93620a9b66393388066683915271a78",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df5776161e3226ac31bfb919dfe5f42e173a08293fadb4ffa90ffb55e76869d7",
+				"dweb:/ipfs/QmXtKfvWj1v6oha8urbnw4RmjSpmQjZsGGqK5qk5trK4nH"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+			"keccak256": "0xb8d11e77eb1ed34a33720edb551d7d6a6b0eee2bfaa40a7024020e1fdf879b16",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c583283c838cc624a96a69eaa823fa92ac5294ec88d417e266c09ea091e0ae62",
+				"dweb:/ipfs/QmNdzitXaFADaxooWpB4WsckkDyr4j6GQRxBjyKXsvEeXv"
+			]
+		},
+		"openzeppelin-solidity/contracts/utils/Address.sol": {
+			"keccak256": "0x069b2631bb5b5193a58ccf7a06266c7361bd2c20095667af4402817605627f45",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a4c96fafff76deda5697c3c5c98cade6e6e1b178254544c106bf360c079ce4e",
+				"dweb:/ipfs/QmXmxubE3jnatFgZuN8ay1VV6hZ8WRmhvUjNpeVjki15HX"
+			]
+		},
+		"openzeppelin-solidity/contracts/utils/Context.sol": {
+			"keccak256": "0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395",
+				"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN"
+			]
+		},
+		"openzeppelin-solidity/contracts/utils/Strings.sol": {
+			"keccak256": "0x456e9b3a2bfe189b5249857f624f4139e59331db518483b456c4e587a20552e0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1123c9545decc48a011370ebab4bf53dda98524fa21f9498e68851ba8f0ffc0f",
+				"dweb:/ipfs/QmUpgMg8EFDnv87ePKUjXxXpJT3qwHRj9VDNSnRxu7T9sy"
+			]
+		},
+		"openzeppelin-solidity/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549",
+				"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn"
+			]
+		},
+		"openzeppelin-solidity/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6",
+				"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx"
+			]
+		},
+		"openzeppelin-solidity/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x2526b7c6a366fc211bbc176078ab02b83833e7682abcc5b3bed9d700b34e2a3e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5f9529d3d365e8415155cee11394e0f7c0de2152b601b7e77508fce16cb4a509",
+				"dweb:/ipfs/QmVhbcLVsAzvqfjsdLwy25XMjgVJm7Z3w2JCNiNbZF2GHT"
+			]
+		}
+	},
+	"version": 1
+}

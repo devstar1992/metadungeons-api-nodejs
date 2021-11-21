@@ -1,0 +1,67 @@
+const express = require('express')
+const path = require('path')
+const moment = require('moment')
+const { HOST } = require('./src/constants')
+const db = require('./src/database')
+const goldSetABI=require('./abi/GoldCraftingSet_metadata.json');
+const silverSetABI=require('./abi/SilverCraftingSet_metadata.json');
+const mithrilSetABI=require('./abi/MithrilCraftingSet_metadata.json');
+// const factorySetABI=require('./abi/SetFactory_metadata.json');
+const silverAddress="";
+const goldAddress="";
+const mithrilAddress="";
+// const factoryAddress="";
+
+
+const PORT = process.env.PORT || 3001
+const Web3 = require("web3");
+const url = "wss://eth-mainnet.alchemyapi.io/v2/UdVl55H5KSJkdnZfXcn47IC_j3EhObCO";
+
+const options = {
+  timeout: 30000,
+  clientConfig: {
+    maxReceivedFrameSize: 100000000,
+    maxReceivedMessageSize: 100000000,
+  },
+  reconnect: {
+    auto: true,
+    delay: 5000,
+    maxAttempts: 15,
+    onTimeout: false,
+  },
+};
+
+const web3 = new Web3(new Web3.providers.WebsocketProvider(url, options));
+
+const app = express()
+  .set('port', PORT)
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+
+// Static public files
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', function(req, res) {
+  res.send('Get ready for OpenSea!');
+})
+
+app.get('/api/gold_sets/:token_id',async function(req, res) { 
+  const contract = new web3.eth.Contract(goldSetABI, goldAddress);
+  const info=await contract.methods.getTokenInfoSuffix.call();
+  console.log(info);
+  // const data = {
+  //   'name': "Gold Crafting Set",
+  //   'description':"Metadungeons Fold Crafting Set "+grade_details,
+  //   'attributes': {
+  //     'Grade': grade    
+  //   },
+  //   'image': `/images/gold_${grade}.png`
+  // }
+  res.send(info)
+})
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+})
+
+// returns the zodiac sign according to day and month ( https://coursesweb.net/javascript/zodiac-signs_cs )
