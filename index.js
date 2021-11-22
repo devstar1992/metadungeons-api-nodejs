@@ -60,7 +60,7 @@ app.get('/api/gold_sets/:token_id', async function (req, res) {
       'image': `http://167.172.46.136/images/gold_${grade}.png`
     }
 
-    res.send(info)
+    res.send(data)
   } catch (err) {
     console.log(err)
     res.send(err)
