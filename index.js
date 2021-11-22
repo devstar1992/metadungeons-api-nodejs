@@ -11,7 +11,7 @@ const silverAddress="";
 const goldAddress="0xB63901F32fEc8581275632E678B52BE4764208d3";
 const mithrilAddress="";
 // const factoryAddress="";
-
+console.log(goldSetABI);
 
 const PORT = process.env.PORT || 3001
 const Web3 = require("web3");
