@@ -50,21 +50,97 @@ app.get('/api/gold_sets/:token_id', async function (req, res) {
     const info = await contract.methods.getTokenInfoSuffix(req.params.token_id).call();
     console.log(info);
     console.log(info.grade);
-    const grade=info.grade==0 ? "C" : info.grade==1 ? "B" : "A";
+    const grade = info.grade == 0 ? "C" : info.grade == 1 ? "B" : "A";
     const data = {
       'name': "Gold Crafting Set",
-      'description': "Metadungeons Fold Crafting Set " + info.grade==0 ? "Small Gold Crafting Set" : info.grade==1 ? "Standard Gold Crafting Set" : "Deluxe Gold Crafting Set",
+      'description': "Metadungeons " + info.grade == 0 ? "Small Gold Crafting Set" : info.grade == 1 ? "Standard Gold Crafting Set" : "Deluxe Gold Crafting Set",
       'attributes': {
         'Grade': grade
       },
       'image': `http://167.172.46.136/images/gold_${grade}.png`
     }
 
-    res.send(data)
+    res.json(data)
   } catch (err) {
     console.log(err)
     res.send(err)
   }
+
+});
+
+app.get('/api/silver_sets/:token_id', async function (req, res) {
+  const contract = new web3.eth.Contract(silverSetABI, silverAddress);
+  try {
+    const info = await contract.methods.getTokenInfoSuffix(req.params.token_id).call();
+    console.log(info);
+    console.log(info.grade);
+    const grade = info.grade == 0 ? "C" : info.grade == 1 ? "B" : "A";
+    const data = {
+      'name': "Silver Crafting Set",
+      'description': "Metadungeons " + info.grade == 0 ? "Small Silver Crafting Set" : info.grade == 1 ? "Standard Silver Crafting Set" : "Deluxe Silver Crafting Set",
+      'attributes': {
+        'Grade': grade
+      },
+      'image': `http://167.172.46.136/images/gold_${grade}.png`
+    }
+
+    res.json(data)
+  } catch (err) {
+    console.log(err)
+    res.send(err)
+  }
+
+})
+
+app.get('/api/mithril_sets/:token_id', async function (req, res) {
+  const contract = new web3.eth.Contract(mithrilSetABI, mithrilAddress);
+  try {
+    const info = await contract.methods.getTokenInfoSuffix(req.params.token_id).call();
+
+    const grade = info.grade == 0 ? "C" : info.grade == 1 ? "B" : info.grade == 2 ? "A" : "S";
+    const data = {
+      'name': "Mithril Crafting Set",
+      'description': "Metadungeons " + info.grade == 0 ? "Small Mithril Crafting Set" : info.grade == 1 ? "Standard Mithril Crafting Set" : info.grade == 2 ? "Deluxe Mithril Crafting Set" : "Royal Mithril Crafting Set",
+      'attributes': {
+        'Grade': grade
+      },
+      'image': `http://167.172.46.136/images/mithril_${grade}.png`
+    }
+
+    res.json(data)
+  } catch (err) {
+    console.log(err)
+    res.send(err)
+  }
+
+});
+
+app.get('/api/factory/:option_id', async function (req, res) {
+  let data;
+  if(req.params.option_id==0){
+    data = {
+      'name': "Metadungeons Silver Pack Sale",
+      'description': "Metadungeons Silver Pack Sale",
+      'image': `http://167.172.46.136/images/pack_silver.png`
+    }
+  }else if(req.params.option_id==1){
+    data = {
+      'name': "Metadungeons Gold Pack Sale",
+      'description': "Metadungeons Gold Pack Sale",
+      'image': `http://167.172.46.136/images/pack_gold.png`
+    }
+  }else{
+    data = {
+      'name': "Metadungeons Mithril Pack Sale",
+      'description': "Metadungeons Mithril Pack Sale",
+      'image': `http://167.172.46.136/images/pack_mithril.png`
+    }
+  }
+
+
+
+  res.json(data)
+
 
 })
 
