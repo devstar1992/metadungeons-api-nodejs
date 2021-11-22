@@ -7,9 +7,9 @@ const goldSetABI = require('./abi/GoldCraftingSet_metadata.json');
 const silverSetABI = require('./abi/SilverCraftingSet_metadata.json');
 const mithrilSetABI = require('./abi/MithrilCraftingSet_metadata.json');
 // const factorySetABI=require('./abi/SetFactory_metadata.json');
-const silverAddress = "";
-const goldAddress = "0xB63901F32fEc8581275632E678B52BE4764208d3";
-const mithrilAddress = "";
+const silverAddress = "0x1753D04203A3145BF87d0d5e382f74206b0C004d";
+const goldAddress = "0xc7B54e96C305761c2EDe93a5ba84Bd2C54DF9AB7";
+const mithrilAddress = "0xe7F259F154163873E23c5518a797914e2563f718";
 // const factoryAddress="";
 
 const PORT = process.env.PORT || 3001
