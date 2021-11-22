@@ -47,11 +47,13 @@ app.get('/', function (req, res) {
 app.get('/api/gold_sets/:token_id', async function (req, res) {
   const contract = new web3.eth.Contract(goldSetABI, goldAddress);
   try {
-    const info = await contract.methods.getTokenInfoSuffix(1).call();
+    const info = await contract.methods.getTokenInfoSuffix(req.params.token_id).call();
     console.log(info);
-
+    console.log(info.grade);
+    res.send(info)
   } catch (err) {
     console.log(err)
+    res.send(err)
   }
   // const data = {
   //   'name': "Gold Crafting Set",
@@ -61,7 +63,7 @@ app.get('/api/gold_sets/:token_id', async function (req, res) {
   //   },
   //   'image': `/images/gold_${grade}.png`
   // }
-  res.send(info)
+ 
 })
 
 app.listen(app.get('port'), function () {
