@@ -47,8 +47,13 @@ app.get('/', function(req, res) {
 
 app.get('/api/gold_sets/:token_id',async function(req, res) { 
   const contract = new web3.eth.Contract(goldSetABI, goldAddress);
+  try{
   const info=await contract.methods.getTokenInfoSuffix(1).call();
   console.log(info);
+
+  }catch(err){
+    console.log(err)
+  }
   // const data = {
   //   'name': "Gold Crafting Set",
   //   'description':"Metadungeons Fold Crafting Set "+grade_details,
