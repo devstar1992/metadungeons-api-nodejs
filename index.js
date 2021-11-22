@@ -50,20 +50,22 @@ app.get('/api/gold_sets/:token_id', async function (req, res) {
     const info = await contract.methods.getTokenInfoSuffix(req.params.token_id).call();
     console.log(info);
     console.log(info.grade);
+    const grade=info.grade==0 ? "C" : info.grade==1 ? "B" : "A";
+    const data = {
+      'name': "Gold Crafting Set",
+      'description': "Metadungeons Fold Crafting Set " + info.grade==0 ? "Small Gold Crafting Set" : info.grade==1 ? "Standard Gold Crafting Set" : "Deluxe Gold Crafting Set",
+      'attributes': {
+        'Grade': grade
+      },
+      'image': `http://167.172.46.136/images/gold_${grade}.png`
+    }
+
     res.send(info)
   } catch (err) {
     console.log(err)
     res.send(err)
   }
-  // const data = {
-  //   'name': "Gold Crafting Set",
-  //   'description':"Metadungeons Fold Crafting Set "+grade_details,
-  //   'attributes': {
-  //     'Grade': grade    
-  //   },
-  //   'image': `/images/gold_${grade}.png`
-  // }
- 
+
 })
 
 app.listen(app.get('port'), function () {
