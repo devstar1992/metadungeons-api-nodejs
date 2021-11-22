@@ -8,7 +8,7 @@ const silverSetABI=require('./abi/SilverCraftingSet_metadata.json');
 const mithrilSetABI=require('./abi/MithrilCraftingSet_metadata.json');
 // const factorySetABI=require('./abi/SetFactory_metadata.json');
 const silverAddress="";
-const goldAddress="";
+const goldAddress="0xB63901F32fEc8581275632E678B52BE4764208d3";
 const mithrilAddress="";
 // const factoryAddress="";
 
@@ -47,7 +47,7 @@ app.get('/', function(req, res) {
 
 app.get('/api/gold_sets/:token_id',async function(req, res) { 
   const contract = new web3.eth.Contract(goldSetABI, goldAddress);
-  const info=await contract.methods.getTokenInfoSuffix.call();
+  const info=await contract.methods.getTokenInfoSuffix(1).call();
   console.log(info);
   // const data = {
   //   'name': "Gold Crafting Set",
