@@ -57,7 +57,7 @@ app.get('/api/gold_sets/:token_id', async function (req, res) {
       'attributes': {
         'Grade': grade
       },
-      'image': `http://167.172.46.136/images/gold_${grade}.png`
+      'image': `http://167.172.46.136/images/gold_${grade.toLocaleLowerCase()}.png`
     }
 
     res.json(data)
@@ -81,7 +81,7 @@ app.get('/api/silver_sets/:token_id', async function (req, res) {
       'attributes': {
         'Grade': grade
       },
-      'image': `http://167.172.46.136/images/gold_${grade}.png`
+      'image': `http://167.172.46.136/images/silver_${grade.toLocaleLowerCase()}.png`
     }
 
     res.json(data)
@@ -104,7 +104,7 @@ app.get('/api/mithril_sets/:token_id', async function (req, res) {
       'attributes': {
         'Grade': grade
       },
-      'image': `http://167.172.46.136/images/mithril_${grade}.png`
+      'image': `http://167.172.46.136/images/mithril_${grade.toLocaleLowerCase()}.png`
     }
 
     res.json(data)
